@@ -1,8 +1,9 @@
-# App-Inventor-Extensions
+App-Inventor-Extensions
 ======
 
 额这只是一个写博课时的代码合集，方便自己管理，也方便大家
 
-###shape
+## shape
+这是一个形状创建工具，可以创建比如圆角矩形之类的形状，而不用图片。
+还有水波纹动画。
 
-这是一个形状创建工具
