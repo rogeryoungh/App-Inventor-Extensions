@@ -16,12 +16,12 @@ import com.google.appinventor.components.runtime.errors.YailRuntimeError;
 
 public class MyExtension extends AndroidNonvisibleComponent {
     public static final int VERSION = 1;
-    private static final String LOG_TAG = "Test";
-    
+    private static final String LOG_TAG = "MyExtension";
+
     public MyExtension(ComponentContainer container) {
         super(container.$form());
     }
-    
+
     @SimpleFunction(description = "add up a and b")
     public String addab(int a,int b) {
         return ""+(a+b);
