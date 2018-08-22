@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.graphics.drawable.Drawable;
+import android.graphics.Color;
 
 
 @DesignerComponent(version = ViewUtil.VERSION,
@@ -20,7 +21,7 @@ import android.graphics.drawable.Drawable;
 
 @SimpleObject(external = false)
 
-public abstract class ViewUtil extends AndroidNonvisibleComponent{
+public abstract class ViewUtil extends IDUtil{
     public static final int VERSION = 1;
     private static final String LOG_TAG = "ViewUtil";
     private ComponentContainer container;
@@ -36,91 +37,77 @@ public abstract class ViewUtil extends AndroidNonvisibleComponent{
         context = (Context) container.$context();
     }
     public abstract void NEW(int id,int parent,int width,int height);
-    public View findViewById(int id) {
-        return container.$form().findViewById(id);
-    }
+    
     @SimpleFunction(description = "start")
-    public void bringToFront(int id) {
+    public void bringToFront() {
         findViewById(id).bringToFront();
     }
     @SimpleFunction(description = "start")
-    public void clearAnimation(int id) {
+    public void clearAnimation() {
         findViewById(id).clearAnimation();
     }
     @SimpleFunction(description = "start")
-    public int getId(int id) {
-        return findViewById(id).getId();
-    }
-    @SimpleFunction(description = "start")
-    public int getVisibility(int id) {
+    public int getVisibility() {
         return findViewById(id).getVisibility();
     }
     @SimpleFunction(description = "start")
-    public void invalidate(int id) {
+    public void invalidate() {
         findViewById(id).invalidate();
     }
     @SimpleFunction(description = "start")
-    public void setBackgroundColor(int id,int color) {
-        findViewById(id).setBackgroundColor(color);
+    public void setBackgroundColor(String color) {
+        findViewById(id).setBackgroundColor(Color.parseColor(color));
     }
     @SimpleFunction(description = "start")
-    public void setBackgroundDrawable(int id,Object drawable) {
-        findViewById(id).setBackgroundDrawable((Drawable)drawable);
-    }
-    @SimpleFunction(description = "start")
-    public void setElevation(int id,float elevation) {
+    public void setElevation(float elevation) {
         findViewById(id).setElevation(elevation);
     }
     @SimpleFunction(description = "start")
-    public void setId(Object view,int id) {
-        ((View)view).setId(id);
-    }
-    @SimpleFunction(description = "start")
-    public void setKeepScreenOn(int id,boolean keepScreenOn) {
+    public void setKeepScreenOn(boolean keepScreenOn) {
         findViewById(id).setKeepScreenOn(keepScreenOn);
     }
     @SimpleFunction(description = "start")
-    public void setMargins(int id,int left, int top, int right, int bottom) {
+    public void setMargins(int left, int top, int right, int bottom) {
         ((ViewGroup.MarginLayoutParams)findViewById(id).getLayoutParams()).setMargins(left,top,right,bottom);
     }
     @SimpleFunction(description = "start")
-    public void setPadding(int id,int left, int top, int right, int bottom) {
+    public void setPadding(int left, int top, int right, int bottom) {
         findViewById(id).setPadding(left,top,right,bottom);
     }
     @SimpleFunction(description = "start")
-    public void setRotation(int id,float rotation) {
+    public void setRotation(float rotation) {
         findViewById(id).setRotation(rotation);
     }
     @SimpleFunction(description = "start")
-    public void setRotationX(int id,float rotationX) {
+    public void setRotationX(float rotationX) {
         findViewById(id).setRotationX(rotationX);
     }
     @SimpleFunction(description = "start")
-    public void setRotationY(int id,float rotationY) {
+    public void setRotationY(float rotationY) {
         findViewById(id).setRotationY(rotationY);
     }
     @SimpleFunction(description = "start")
-    public void setTag(int id,Object tag) {
+    public void setTag(Object tag) {
         findViewById(id).setTag(tag);
     }
     @SimpleFunction(description = "start")
-    public void setTextAlignment(int id,int textAlignment) {
+    public void setTextAlignment(int textAlignment) {
         findViewById(id).setTextAlignment(textAlignment);
     }
     @SimpleFunction(description = "start")
-    public void setVisibility(int id,int visibility) {
+    public void setVisibility(int visibility) {
         findViewById(id).setVisibility(visibility);
     }
     @SimpleFunction(description = "start")
-    public void setX(int id,float x) {
+    public void setX(float x) {
         findViewById(id).setX(x);
     }
     @SimpleFunction(description = "start")
-    public void setY(int id,float y) {
+    public void setY(float y) {
         findViewById(id).setY(y);
     }
     @SimpleFunction(description = "start")
-    public void setZ(int id,float z) {
+    public void setZ(float z) {
         findViewById(id).setZ(z);
     }
 }
