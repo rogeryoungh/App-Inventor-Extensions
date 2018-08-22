@@ -29,7 +29,7 @@ ViewUtil抽象类<br>
 
 ## animation
 终于记得小写了。。。<br>
-动画，准备重写。<br>
+动画，重写已完成。<br>
 
 ## OpenGL
 包名又双叒叕不小心大写了。。。<br>
