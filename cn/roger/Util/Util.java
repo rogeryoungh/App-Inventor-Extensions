@@ -57,17 +57,8 @@ public class Util  extends AndroidNonvisibleComponent{
         return Color.parseColor(s);
     }
     @SimpleFunction(description = "start")
-    public Object getView(AndroidViewComponent avc) {
-        return avc.getView();
-    }
-
-    @SimpleFunction(description = "start")
     public void setRootView(int id) {
         container.$form().setContentView((View)findViewById(id));
-    }
-    @SimpleFunction(description = "start")
-    public Object findViewById(int id) {
-        return container.$form().findViewById(id);
     }
     @SimpleFunction(description = "start")
     public void setTheme(int themeId) {
@@ -76,13 +67,5 @@ public class Util  extends AndroidNonvisibleComponent{
     @SimpleFunction(description = "start")
     public Object NULL() {
         return null;
-    }
-    @SimpleFunction(description = "setDrawable")
-    public Object getBackground(Object view){
-        return ((View)view).getBackground();
-    }
-    @SimpleFunction(description = "setDrawable")
-    public void setDrawable(Object view,Object drawable) {
-        ((View)view).setBackground((Drawable)drawable);
     }
 }
