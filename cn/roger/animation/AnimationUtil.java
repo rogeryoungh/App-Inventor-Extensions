@@ -8,6 +8,9 @@ import com.google.appinventor.components.runtime.errors.YailRuntimeError;
 import android.view.ViewPropertyAnimator;
 import android.animation.ValueAnimator;
 import android.view.View;
+import android.content.Context;
+
+import cn.roger.ViewUtil.IDUtil;
 
 @DesignerComponent(version = AnimationUtil.VERSION,
     description = "由Roger young创作，可以执行动画",
@@ -17,122 +20,135 @@ import android.view.View;
 
 @SimpleObject(external = true)
 
-public class AnimationUtil extends AndroidNonvisibleComponent {
+public class AnimationUtil extends IDUtil {
     public static final int VERSION = 1;
     private static final String LOG_TAG = "AnimationUtil";
+    private ComponentContainer container;
+    private Context context;
 	
     public AnimationUtil(ComponentContainer container) {
         super(container.$form());
+        this.container = container;
+        context = (Context) container.$context();
     }
-    @SimpleFunction(description = "start")
-    public void start(Object vpa,long duration,long startDelay) {
-		((ViewPropertyAnimator)vpa).setDuration(duration);
-        ((ViewPropertyAnimator)vpa).setStartDelay(startDelay);
-        ((ViewPropertyAnimator)vpa).start();
+    public ViewPropertyAnimator getAnimator(int id) {
+        return findViewById(id).animate();
     }
-    
+
     @SimpleFunction(description = "getAnimator")
-    public Object getAnimator(Object view) {
-        return ((View)view).animate();
+    public void start(long duration,long startDelay) {
+        getAnimator(id).setDuration(duration);;
+        getAnimator(id).setStartDelay(startDelay);
+        getAnimator(id).start();
     }
 	
     @SimpleFunction(description = "scaleX")
-    public Object scaleX(Object vpa,float f,boolean b) {
-		if(b)
-			return ((ViewPropertyAnimator)vpa).scaleXBy(f);
-		else
-			return ((ViewPropertyAnimator)vpa).scaleX(f);
+    public void scaleX(float f,boolean b) {
+		if(b) getAnimator(id).scaleXBy(f);
+		else getAnimator(id).scaleX(f);
     }
     @SimpleFunction(description = "scaleY")
-    public Object scaleY(Object vpa,float f,boolean b) {
-		if(b)
-			return ((ViewPropertyAnimator)vpa).scaleYBy(f);
-		else
-			return ((ViewPropertyAnimator)vpa).scaleY(f);
+    public void scaleY(float f,boolean b) {
+		if(b) getAnimator(id).scaleYBy(f);
+		else getAnimator(id).scaleY(f);
     }
 	
     @SimpleFunction(description = "alpha")
-    public Object alpha(Object vpa,float f,boolean b) {
-		if(b)
-			return ((ViewPropertyAnimator)vpa).alphaBy(f);
-		else
-			return ((ViewPropertyAnimator)vpa).alpha(f);
+    public void alpha(float f,boolean b) {
+		if(b) getAnimator(id).alphaBy(f);
+		else getAnimator(id).alpha(f);
     }
 	
     @SimpleFunction(description = "translationX")
-    public Object translationX(Object vpa,float f,boolean b) {
-		if(b)
-			return ((ViewPropertyAnimator)vpa).translationXBy(f);
-		else
-			return ((ViewPropertyAnimator)vpa).translationX(f);
+    public void translationX(float f,boolean b) {
+		if(b) getAnimator(id).translationXBy(f);
+		else getAnimator(id).translationX(f);
     }
     @SimpleFunction(description = "translationY")
-    public Object translationY(Object vpa,float f,boolean b) {
-		if(b)
-			return ((ViewPropertyAnimator)vpa).translationYBy(f);
-		else
-			return ((ViewPropertyAnimator)vpa).translationY(f);
+    public void translationY(float f,boolean b) {
+		if(b) getAnimator(id).translationYBy(f);
+		else getAnimator(id).translationY(f);
     }
     @SimpleFunction(description = "translationZ")
-    public Object translationZ(Object vpa,float f,boolean b) {
-		if(b)
-			return ((ViewPropertyAnimator)vpa).translationZBy(f);
-		else
-			return ((ViewPropertyAnimator)vpa).translationZ(f);
+    public void translationZ(float f,boolean b) {
+		if(b) getAnimator(id).translationZBy(f);
+		else getAnimator(id).translationZ(f);
     }
 	
     @SimpleFunction(description = "cancel")
     public void cancel(Object vpa) {
-        ((ViewPropertyAnimator)vpa).cancel();
+        getAnimator(id).cancel();
     }
 	
     @SimpleFunction(description = "rotation")
-    public Object rotation(Object vpa,float f,boolean b) {
-		if(b)
-			return ((ViewPropertyAnimator)vpa).rotationBy(f);
-		else
-			return ((ViewPropertyAnimator)vpa).rotation(f);
+    public void rotation(float f,boolean b) {
+		if(b) getAnimator(id).rotationBy(f);
+		else getAnimator(id).rotation(f);
     }
     @SimpleFunction(description = "rotationX")
-    public Object rotationX(Object vpa,float f,boolean b) {
-		if(b)
-			return ((ViewPropertyAnimator)vpa).rotationXBy(f);
-		else
-			return ((ViewPropertyAnimator)vpa).rotationX(f);
+    public void rotationX(float f,boolean b) {
+		if(b) getAnimator(id).rotationXBy(f);
+		else getAnimator(id).rotationX(f);
     }
     @SimpleFunction(description = "rotationY")
-    public Object rotationY(Object vpa,float f,boolean b) {
-		if(b)
-			return ((ViewPropertyAnimator)vpa).rotationYBy(f);
-		else
-			return ((ViewPropertyAnimator)vpa).rotationY(f);
+    public void rotationY(float f,boolean b) {
+		if(b) getAnimator(id).rotationYBy(f);
+		else getAnimator(id).rotationY(f);
     }
 	
     @SimpleFunction(description = "withLayer")
-    public Object withLayer(Object vpa) {
-        return ((ViewPropertyAnimator)vpa).withLayer();
+    public void withLayer() {
+        getAnimator(id).withLayer();
     }
 	
     @SimpleFunction(description = "x")
-    public Object x(Object vpa,float f,boolean b) {
-		if(b)
-			return ((ViewPropertyAnimator)vpa).xBy(f);
-		else
-			return ((ViewPropertyAnimator)vpa).x(f);
+    public void x(float f,boolean b) {
+		if(b) getAnimator(id).xBy(f);
+		else getAnimator(id).x(f);
     }
     @SimpleFunction(description = "y")
-    public Object y(Object vpa,float f,boolean b) {
-		if(b)
-			return ((ViewPropertyAnimator)vpa).yBy(f);
-		else
-			return ((ViewPropertyAnimator)vpa).y(f);
+    public void y(float f,boolean b) {
+		if(b) getAnimator(id).yBy(f);
+		else getAnimator(id).y(f);
     }
     @SimpleFunction(description = "z")
-    public Object z(Object vpa,float f,boolean b) {
-        if(b)
-            return ((ViewPropertyAnimator)vpa).zBy(f);
-        else
-            return ((ViewPropertyAnimator)vpa).z(f);
+    public void z(float f,boolean b) {
+        if(b) getAnimator(id).zBy(f);
+        else getAnimator(id).z(f);
+    }
+
+    @SimpleEvent
+    public void WithStartAction(int id){
+        EventDispatcher.dispatchEvent(this, "WithStartAction", id);
+    }
+    @SimpleFunction(description = "z")
+    public void addStartActionEvent() {
+        getAnimator(id).withStartAction(
+            new Runnable(){
+            int nowid = id;
+            public void run(){
+                WithStartAction(id);
+            }
+        });
+    }
+
+    @SimpleEvent
+    public void WithEndAction(int id){
+        EventDispatcher.dispatchEvent(this, "WithEndAction", id);
+    }
+    @SimpleFunction(description = "z")
+    public void addEndActionEvent() {
+        getAnimator(id).withEndAction(
+            new Runnable(){
+            int nowid = id;
+            public void run(){
+                WithEndAction(id);
+            }
+        });
     }
 	
+    @SimpleEvent
+    public void Click(int id){
+        EventDispatcher.dispatchEvent(this, "Click", id);
+    }
 }
