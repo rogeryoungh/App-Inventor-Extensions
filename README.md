@@ -6,6 +6,14 @@ App-Inventor-Extensions
 一个要开学的高二狗，轻喷<br>
 可能导入有很大的冗余，见谅<br>
 因为我英语很差，而且很懒，所以description的介绍都没写，全是复制粘贴的。。。<br>
+顺便去我的csdn逛一圈呗<br>
+https://blog.csdn.net/aiw_prton<br>
+App Inventor插件开发(六)WIFI通信<br>
+App Inventor插件开发(五)更美的UI<br>
+App Inventor插件开发(四)OpenGL未完待续<br>
+App Inventor插件开发(三)动画插件<br>
+App Inventor插件开发(二)编译第一个AIX插件<br>
+App Inventor插件开发(一)配置环境<br>
 
 ## shape
 shapeUtil是一个形状创建工具，可以创建比如圆角矩形之类的形状，节省空间<br>
@@ -35,3 +43,8 @@ ViewUtil抽象类<br>
 ## OpenGL
 包名又双叒叕不小心大写了。。。<br>
 预计等这属于我单身狗的一年过去了上传。<br>
+
+## Socket
+包名又双叒叕不小心大写了。。。<br>
+用于wifi下socket通信<br>
+测试见csdn<br>
