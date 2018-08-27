@@ -1,8 +1,7 @@
 cn.roger.animation
 ========
 
-为了适应app inventor那诡异的语法，采用了状态机的方式来组织语句。<br>
-状态机的具体含义参见根目录的README.md<br>
+为了适应app inventor那诡异的语法，使用了工厂模式。<br>
 [常数表在此](https://www.showdoc.cc/web/#/133680866739480)<br>
 
 ## ViewPropertyAnimatorUtil
@@ -10,8 +9,6 @@ cn.roger.animation
 加by意味着叠加，如<br>
 rotation(360f)，rotation(360f) = 0~360，360~360<br>
 rotationBy(360f)，rotationBy(360f) = 0~360，360~720<br>
-#### 状态
-id
 #### 方法
 方法|注释
 -|-
